@@ -1,0 +1,96 @@
+body {
+    background: linear-gradient(to top right, #e66465, #9198e5);
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-top: 100px;
+}
+
+.calculator {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 380px;
+    margin: auto;
+    background: #888787;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.display-container {
+    display: flex;
+    flex-direction: column;
+    background: lightgray;
+    width: 350px;
+    height: 125px;
+    margin-top: 10px;    
+    margin-bottom: 10px;
+    color: black;
+    border-radius: 10px;
+    border: 2px solid black;
+    text-align: right;
+    padding: 10px;
+    align-items: flex-end;
+    justify-content: space-between;
+    word-wrap: break-word;
+    word-break: break-all;
+    
+}
+
+.previousOp {
+    font-size: 25px;
+
+}
+
+.currentOp {
+    font-weight: bold;
+    font-size: 60px;
+
+}
+
+
+.btn-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 15px;
+}
+
+.calcGrid {
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: lightgray;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.calcGrid:hover {
+    filter: brightness(0.85);
+}
+
+.calcGrid:focus {
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+    -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+    box-shadow: inset 0px 0px 5px #c1c1c1;
+    outline: none;
+}
+
+.red {
+    background-color: rgb(241, 146, 146);
+}
+
+.blue {
+    background: rgb(156, 156, 241);
+}
+
+.yellow {
+    background: rgb(252, 204, 117);
+}

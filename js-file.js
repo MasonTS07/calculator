@@ -1,0 +1,5 @@
+const clearBtn = document.querySelectorAll('[data-clear]')
+const deleteBtn = document.querySelectorAll('[data-delete]')
+const operation = document.querySelectorAll('[data-operation]')
+const numberBtn = document.querySelectorAll('[data-clear]')
+const equalsBtn = document.querySelectorAll('[data-equals]')
