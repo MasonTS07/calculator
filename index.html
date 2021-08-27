@@ -8,13 +8,14 @@
 <body>
     <div class="calculator">
         <div class="display-container">
-            <div class="previousOp">123 + </div>
-            <div class="currentOp">345</div>
+            <div class="previousOp" data-previousOp> 123 + 123</div>
+            <div class="currentTotal" data-currentTotal>= 246</div>
+            <div class="currentOp" data-currentOp>100</div>
         </div>
         <div class="btn-container">
             <button class="calcGrid red" data-clear>AC</button>
             <button class="calcGrid red" data-delete>DEL</button>
-            <button class="calcGrid blue" id="squared">x²</button>
+            <button class="calcGrid blue" data-operation>%</button>
             <button class="calcGrid blue" data-operation>÷</button>
             <button class="calcGrid" data-number>7</button>
             <button class="calcGrid" data-number>8</button>
@@ -28,8 +29,7 @@
             <button class="calcGrid" data-number>2</button>
             <button class="calcGrid" data-number>3</button>
             <button class="calcGrid blue" data-operation>+</button>
-            <button class="calcGrid" id="plusMinus">+/-</button>
-            <button class="calcGrid" id="number0">0</button>
+            <button class="calcGrid spanTwo" data-number>0</button>
             <button class="calcGrid" data-number>.</button>
             <button class="calcGrid yellow" data-equals>=</button>
         </div>
@@ -37,3 +37,9 @@
   <script type="text/javascript" src="js-file.js"></script>
 </body>
 </html>
+
+
+<!--- 
+  <button class="calcGrid" id="plusMinus">+/-</button>
+<button class="calcGrid blue" id="squared">x²</button>
+  --->
