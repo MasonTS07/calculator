@@ -7,8 +7,8 @@ const operationBtn = document.querySelectorAll('[data-operation]');
 const numberBtn = document.querySelectorAll('[data-number]');
 const equalsBtn = document.querySelector('[data-equals]');
 
-let display1Num = '';
-let display2Num = '';
+let num1 = '';
+let num2 = '';
 let result = null;
 let lastOperation = '';
 let hasDot = false;
@@ -22,21 +22,21 @@ numberBtn.forEach(number => {
         else if(e.target.innerText === '.' && hasDot){
             return;
         }
-        display2Num += e.target.innerText;
-        currentOp.innerText = display2Num;
+        num2 += e.target.innerText;
+        currentOp.innerText = num2;
     })
 })
 
 operationBtn.forEach(operation => {
     operation.addEventListener('click', (e)=> {
-        if (!display2Num) result;
+        if (!num2) result;
         hasDot = false;
         const operationName = e.target.innerText;
-        if(display1Num && display2Num && lastOperation) {
+        if(num1 && num2 && lastOperation) {
             mathOperation();
         }
         else {
-            result = parseFloat(display2Num);
+            result = parseFloat(num2);
         }
         clearVar(operationName);
         lastOperation = operationName;
@@ -44,53 +44,53 @@ operationBtn.forEach(operation => {
 })
 
 function clearVar(name = '') {
-    display1Num += display2Num + '' + name + '';
-    previousOp.innerText = display1Num;
+    num1 += num2 + '' + name + '';
+    previousOp.innerText = num1;
     currentOp.innerText = '';
-    display2Num = '';
+    num2 = '';
     currentTotal.innerText = '=' + result;
 }
 
 function mathOperation() {
     if(lastOperation === '+') {
-        result = parseFloat(result) + parseFloat(display2Num);
+        result = parseFloat(result) + parseFloat(num2);
     }
     else if(lastOperation === '-') {
-        result = parseFloat(result) - parseFloat(display2Num);
+        result = parseFloat(result) - parseFloat(num2);
     }
     else if(lastOperation === '×') {
-        result = parseFloat(result) * parseFloat(display2Num);
+        result = parseFloat(result) * parseFloat(num2);
     }
     else if(lastOperation === '/') {
-        result = parseFloat(result) / parseFloat(display2Num);
+        result = parseFloat(result) / parseFloat(num2);
     }
     else if(lastOperation === '%') {
-        result = parseFloat(result) % parseFloat(display2Num);
+        result = parseFloat(result) % parseFloat(num2);
     }
 }
 
 equalsBtn.addEventListener('click', (e)=> {
-    if( !display1Num || !display2Num ) return;
+    if( !num1 || !num2 ) return;
     hasDot = false;
     mathOperation();
     clearVar();
     currentOp.innerText = result;
     currentTotal.innerText = '';
-    display2Num = result;
-    display1Num = '';
+    num2 = result;
+    num1 = '';
 })
 
 clearBtn.addEventListener('click', (e)=> {
     previousOp.innerText = '0';
     currentOp.innerText = '0';
-    display1Num = '';
-    display2Num = '';
+    num1 = '';
+    num2 = '';
     currentTotal.innerText = '';
     result = '';
 })
 
 deleteBtn.addEventListener('click', (e)=> {
     currentOp.innerText = '';
-    display2Num = '';
+    num2 = '';
 })
 
